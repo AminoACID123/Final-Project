@@ -10,7 +10,7 @@
 运行流程：Battle类中初始化各种游戏元素，每个Creature为一个线程，游戏开始执行start方法，每回合结束Camera会更新Creature对应的CreatureView用于显示
 
 （a）生物相关：  
-![avatar](../images/1.png)
+![avatar](/images/1.png)
 Creature为所有生物的基类，它同时也继承Thread。其中包含：  
 变量：生物体的各项属性（包括位置信息），生物体所在Space  
 方法：move(),pickTarget(),attack(),对应于生物体的移动、选择目标、攻击，run（）方法中调用这三个方法，实现生物体行为的控制。Grandpa、Snake中重写了这三个方法，通过动态绑定机制使得老爷爷蛇精的战斗行为区别于一般生物体（一般生物体可以移动，攻击与之相邻的敌人，蛇精不会移动但可以全局随机攻击，爷爷不会移动也只能攻击相邻的敌人，弱小可怜又无助）  
